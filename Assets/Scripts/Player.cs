@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     Rigidbody _rig;
+
     [SerializeField] bool isVert, isHor;
     [SerializeField] Vector3 speed;
 
@@ -18,8 +19,9 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
 
-        _rig.velocity += new Vector3(isHor ? -speed.x * Controll.Horizontal : 0f, _rig.velocity.y, isVert ? -speed.z * Controll.Vertical : 0f);
-        //_rig.AddForce(new Vector3(isHor ? -speed.x * Controll.Horizontal: 0f, _rig.velocity.y, isVert ? -speed.z * Controll.Vertical : 0f));
+
+        _rig.velocity += new Vector3(isHor ? -speed.x * Controll.Horizontal : 0f, _rig.velocity.y,
+         isVert ? -speed.z * Controll.Vertical : 0f);
 
     }
     private void OnTriggerEnter(Collider other)

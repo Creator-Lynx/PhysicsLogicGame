@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVert: 0
   isHor: 1
-  speed: {x: 1, y: 0, z: 1}
+  speed: {x: 0.4, y: 0, z: 0.4}
