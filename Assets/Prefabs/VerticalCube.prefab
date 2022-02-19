@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1736130107165824724}
   - component: {fileID: 1736130107165824725}
   - component: {fileID: 1736130107165824726}
+  - component: {fileID: 1048598624138739922}
   m_Layer: 0
   m_Name: VerticalCube
   m_TagString: Untagged
@@ -128,3 +129,16 @@ MonoBehaviour:
   isVert: 1
   isHor: 0
   speed: {x: 0.4, y: 0, z: 0.4}
+--- !u!114 &1048598624138739922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736130107165824727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22e73dcd98bd324faa00a0260150e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrowsPrefab: {fileID: 5529423863493438646, guid: e3432115235d2964780f0192745aa64d, type: 3}

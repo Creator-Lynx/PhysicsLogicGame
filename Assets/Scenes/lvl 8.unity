@@ -804,6 +804,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5335046827113213133, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
     - {fileID: 5335046827113213130, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
+    - {fileID: 3542554147428059871, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
 --- !u!1 &932810641
 GameObject:
@@ -1313,6 +1314,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5335046827113213133, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
     - {fileID: 5335046827113213130, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
+    - {fileID: 3542554147428059871, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
 --- !u!1001 &1577745467
 PrefabInstance:
@@ -1388,6 +1390,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5335046827113213133, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
     - {fileID: 5335046827113213130, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
+    - {fileID: 3542554147428059871, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
 --- !u!1001 &1651443667
 PrefabInstance:
@@ -1532,6 +1535,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5335046827113213133, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
     - {fileID: 5335046827113213130, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
+    - {fileID: 3542554147428059871, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
 --- !u!4 &1904786396 stripped
 Transform:
@@ -1746,6 +1750,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5335046827113213133, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
     - {fileID: 5335046827113213130, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
+    - {fileID: 3542554147428059871, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17ad9c40e35c94f4fb35e90c839e5a99, type: 3}
 --- !u!1 &2138677391
 GameObject:
@@ -1823,6 +1828,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1e-45}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &2138677393

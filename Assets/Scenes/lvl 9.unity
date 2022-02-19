@@ -312,6 +312,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!1001 &72894259
 PrefabInstance:
@@ -700,6 +701,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!4 &177113552 stripped
 Transform:
@@ -830,6 +832,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!1001 &297048779
 PrefabInstance:
@@ -1232,6 +1235,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!4 &751168422 stripped
 Transform:
@@ -1305,6 +1309,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!1 &932810641
 GameObject:
@@ -1539,6 +1544,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!4 &1042203190 stripped
 Transform:
@@ -1932,6 +1938,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!1001 &1873826224
 PrefabInstance:
@@ -1995,6 +2002,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!1001 &1994496566
 PrefabInstance:
@@ -2177,6 +2185,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1690558552085214566, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
     - {fileID: 1690558552085214561, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+    - {fileID: 432533681177368624, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
 --- !u!1 &2138677391
 GameObject:
@@ -2254,6 +2263,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1e-45}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &2138677393

@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody _rig;
 
-    [SerializeField] bool isVert, isHor;
+    public bool isVert, isHor;
     [SerializeField] Vector3 speed;
 
     void Start()

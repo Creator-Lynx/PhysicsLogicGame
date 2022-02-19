@@ -19,7 +19,7 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
 
-
+        
 
     }
     public void OnDrag(PointerEventData eventData)
