@@ -7,6 +7,9 @@ public class IntroMaker : MonoBehaviour
 {
     private void Start()
     {
+#if UNITY_EDITOR
+        PlayerPrefs.SetInt("IsFirstStart", 0);
+#endif
         if (PlayerPrefs.GetInt("IsFirstStart", 0) == 1)
         {
             LoadGameScene();

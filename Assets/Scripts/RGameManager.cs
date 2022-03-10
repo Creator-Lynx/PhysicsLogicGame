@@ -4,13 +4,20 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class RGameManager : MonoBehaviour
 {
-    [SerializeField] GameObject LevelScreen;
+    [SerializeField] GameObject LevelScreen, SettingsScreen;
     [SerializeField] GameObject LevelsUI, AuthorsUI;
-    [SerializeField] public static int LevelsCount = 11;
+    public static int LevelsCount
+    {
+        get { return This.levelsCount; }
+        set { This.levelsCount = value; }
+    }
+    static RGameManager This;
+    [SerializeField] int levelsCount;
     static bool isFirstStart = true;
 
     private void Start()
     {
+        This = GetComponent<RGameManager>();
         GameObject[] objs = GameObject.FindGameObjectsWithTag("MainCamera");
 
 
@@ -97,6 +104,13 @@ public class RGameManager : MonoBehaviour
             Application.OpenURL("https://t.me/umqrahound");
         }
     }
+
+    public void ShowHideSettings()
+    {
+        SettingsScreen.SetActive(!SettingsScreen.activeSelf);
+    }
+
+
     // Update is called once per frame
     void Update()
     {

@@ -13,13 +13,34 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField] float deadZone = 0.4f;
     [SerializeField] Vector2 axis;
 
-    bool isSetDirection = false;
-    int horizontalMultiplier = 1, verticalMultiplier = 1;
+    bool ChoosedDirection = false;
 
+
+    bool UseOneDirectionControll;
+    int horizontalMultiplier = 1, verticalMultiplier = 1;
+    public enum ControllType
+    {
+        legacy,
+        oneDirection
+    }
+    /// <summary>
+    /// Set state for choose what system of controll we want to use. 
+    /// If 0 we use system when only one direction of movement is use,
+    /// If 1 cubes can move in both directions at same time.
+    /// </summary>
+    public void SetControllType(int type)
+    {
+        PlayerPrefs.SetInt("ControllType", type);
+        UseOneDirectionControll = (type == (int)ControllType.legacy) ? true : false;
+    }
+    private void Awake()
+    {
+        SetControllType(PlayerPrefs.GetInt("ControllType", 0));
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
 
-        
+
 
     }
     public void OnDrag(PointerEventData eventData)
@@ -45,9 +66,9 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
         Horizontal = Mathf.Abs(moving.x) > deadZone ? Mathf.Clamp(moving.x, -clamp, clamp) : 0;
         Vertical = Mathf.Abs(moving.y) > deadZone ? Mathf.Clamp(moving.y, -clamp, clamp) : 0;
-        if (!isSetDirection)
+        if (!ChoosedDirection && UseOneDirectionControll)
         {
-            isSetDirection = true;
+            ChoosedDirection = true;
             if (Mathf.Abs(moving.x) > Mathf.Abs(moving.y))
             {
                 verticalMultiplier = 0;
@@ -67,7 +88,7 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
         Horizontal = 0;
         Vertical = 0;
-        isSetDirection = false;
+        ChoosedDirection = false;
         horizontalMultiplier = 1;
         verticalMultiplier = 1;
 
@@ -80,10 +101,5 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         Vertical = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
 }

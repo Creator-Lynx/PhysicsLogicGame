@@ -24,6 +24,7 @@ public class ThemeChanger : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         _animator = GetComponent<Animator>();
+        changingThemes = PlayerPrefs.GetInt("ChangeTheme", 1) == 1;
         StartCoroutine(MusicEndCheck());
     }
 
@@ -35,6 +36,7 @@ public class ThemeChanger : MonoBehaviour
         {
             prevState = state;
             state = State.legacy;
+            _audioSource.Stop();
         }
         else
         if (prevState != State.legacy)
@@ -66,24 +68,46 @@ public class ThemeChanger : MonoBehaviour
 
     IEnumerator MusicEndCheck()
     {
-        if (!_audioSource.isPlaying)
+        if (changingThemes)
         {
-            if (state == State.legacy)
+            if (!_audioSource.isPlaying)
             {
-                yield return new WaitForSeconds(30f);
-                SetTheme();
+                if (state == State.legacy)
+                {
+                    yield return new WaitForSeconds(30f);
+                    SetTheme();
+                }
+                else
+                {
+                    yield return new WaitForSeconds(10f);
+                    SetTheme(true);
+                }
+
             }
             else
             {
-                yield return new WaitForSeconds(10f);
-                SetTheme(true);
+                yield return new WaitForSeconds(5f);
             }
+            StartCoroutine(MusicEndCheck());
+        }
 
+    }
+
+    bool changingThemes;
+
+    public void ToggleChangingThemes()
+    {
+        if (changingThemes)
+        {
+            changingThemes = false;
+            PlayerPrefs.SetInt("ChangeTheme", 0);
+            SetTheme(true);
         }
         else
         {
-            yield return new WaitForSeconds(5f);
+            changingThemes = true;
+            PlayerPrefs.SetInt("ChangeTheme", 1);
+            StartCoroutine(MusicEndCheck());
         }
-        StartCoroutine(MusicEndCheck());
     }
 }
