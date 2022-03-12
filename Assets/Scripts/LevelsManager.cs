@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LevelsManager : MonoBehaviour
@@ -8,12 +9,22 @@ public class LevelsManager : MonoBehaviour
 
     [SerializeField] Transform grid;
     [SerializeField] GameObject levelButton;
+
+    bool showAllLevelsFlag = false;
+    [SerializeField]
+    int touchCounter = 0;
     int firstLevelInLayout = 0;
     public void NextPage()
     {
         if (firstLevelInLayout != 0 && firstLevelInLayout + 31 < RGameManager.LevelsCount)
         {
-            CreateLevelButtons(firstLevelInLayout + 32);
+            if (PlayerPrefs.GetInt("Completed_Levels", 0) > firstLevelInLayout + 31 || showAllLevelsFlag)
+                CreateLevelButtons(firstLevelInLayout + 32);
+            else
+            {
+                touchCounter++;
+                if (touchCounter >= 10) showAllLevelsFlag = true;
+            }
         }
     }
 
@@ -47,4 +58,6 @@ public class LevelsManager : MonoBehaviour
             if (i > completedLevels + 1) b.GetComponent<Button>().interactable = false;
         }
     }
+
+
 }

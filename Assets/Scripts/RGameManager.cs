@@ -79,17 +79,20 @@ public class RGameManager : MonoBehaviour
     //показывает экран с уровнями
     public void ShowLevelsScreen()
     {
+        SettingsScreen.SetActive(false);
         LevelScreen.SetActive(!LevelScreen.activeSelf);
         AuthorsUI.SetActive(false);
         LevelsUI.SetActive(true);
         LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
     }
 
+    [SerializeField]
+    GameObject[] settingsElements;
     //Show Authors screen or levels
     public void ShowAuthors()
     {
         AuthorsUI.SetActive(!AuthorsUI.activeSelf);
-        LevelsUI.SetActive(!LevelsUI.activeSelf);
+        foreach (GameObject el in settingsElements) el.SetActive(!el.activeSelf);
     }
 
     //
@@ -108,6 +111,9 @@ public class RGameManager : MonoBehaviour
     public void ShowHideSettings()
     {
         SettingsScreen.SetActive(!SettingsScreen.activeSelf);
+        AuthorsUI.SetActive(false);
+        LevelScreen.SetActive(false);
+        foreach (GameObject el in settingsElements) if (!el.activeSelf) el.SetActive(true);
     }
 
 
@@ -116,6 +122,7 @@ public class RGameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B)) PlayerPrefs.SetInt("Completed_Levels", 0);
     }
+
 
 
 

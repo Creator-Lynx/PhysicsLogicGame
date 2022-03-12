@@ -13,6 +13,8 @@ public class ButtonsBehaviors : MonoBehaviour
 
     public int level;
 
+    [SerializeField]
+    bool themeButton = false;
     public void StartLevel()
     {
         SceneManager.LoadScene(level);
@@ -29,8 +31,11 @@ public class ButtonsBehaviors : MonoBehaviour
     }
     private void Awake()
     {
-        buttonState = PlayerPrefs.GetInt("ChangeTheme", 1) == 1;
-        ThemeButtonChanger();
-        ThemeButtonChanger();
+        if (themeButton)
+        {
+            buttonState = PlayerPrefs.GetInt("ChangeTheme", 1) == 1;
+            ThemeButtonChanger();
+            ThemeButtonChanger();
+        }
     }
 }
