@@ -40,7 +40,7 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
 
-        Debug.Log("startDrag");
+
 
     }
     public void OnDrag(PointerEventData eventData)
@@ -91,7 +91,6 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         ChoosedDirection = false;
         horizontalMultiplier = 1;
         verticalMultiplier = 1;
-        Debug.Log("endDrag");
 
     }
 

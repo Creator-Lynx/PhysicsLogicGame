@@ -12,14 +12,14 @@ public class CubeArrowsSpawner : MonoBehaviour
         if (player == null || player.enabled == false) return;
         if (player.isHor)
         {
-            GameObject arr = Instantiate(ArrowsPrefab, transform.position + new Vector3(0f, 0.6f, 0f),
+            GameObject arr = Instantiate(ArrowsPrefab, transform.position + new Vector3(0f, 0.51f, 0f),
             Quaternion.Euler(0f, 0f, 0f), transform);
             arr.GetComponent<Animation>().Play();
             Destroy(arr, 4f);
         }
         if (player.isVert)
         {
-            GameObject arr = Instantiate(ArrowsPrefab, transform.position + new Vector3(0f, 0.6f, 0f),
+            GameObject arr = Instantiate(ArrowsPrefab, transform.position + new Vector3(0f, 0.51f, 0f),
             Quaternion.Euler(0f, 90f, 0f), transform);
             arr.GetComponent<Animation>().Play();
             Destroy(arr, 4f);
