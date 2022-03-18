@@ -12,6 +12,7 @@ public class RGameManager : MonoBehaviour
         set { This.levelsCount = value; }
     }
     static RGameManager This;
+    [Header("Levels")]
     [SerializeField] int levelsCount;
     static bool isFirstStart = true;
 
@@ -86,6 +87,7 @@ public class RGameManager : MonoBehaviour
         LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
     }
 
+    [Header("Settings elements")]
     [SerializeField]
     GameObject[] settingsElements;
     //Show Authors screen or levels

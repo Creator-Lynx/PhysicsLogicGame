@@ -29,7 +29,7 @@ public class rigidVelocityChecker : MonoBehaviour
 
     void ChangeScale()
     {
-        Debug.Log("Change scale " + gameObject.name);
+
         counting = false;
         if (GetComponent<Player>().isVert)
         {
