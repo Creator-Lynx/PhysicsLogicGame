@@ -1959,7 +1959,7 @@ MonoBehaviour:
   SettingsScreen: {fileID: 4552455268663491133}
   LevelsUI: {fileID: 4436525737350615275}
   AuthorsUI: {fileID: 5595327385708184908}
-  levelsCount: 32
+  levelsCount: 33
   settingsElements:
   - {fileID: 8834622702969386727}
   - {fileID: 2876464566196388626}
