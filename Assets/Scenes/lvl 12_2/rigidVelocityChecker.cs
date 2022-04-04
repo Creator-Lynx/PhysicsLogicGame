@@ -6,9 +6,9 @@ public class rigidVelocityChecker : MonoBehaviour
 {
     Rigidbody rig;
     [SerializeField]
-    float zeroMagnitude = 0.08f;
+    float zeroMagnitude = 0.05f;
     [SerializeField]
-    float timeToChange = 1f;
+    float timeToChange = 0.8f;
     void Start()
     {
         rig = GetComponent<Rigidbody>();
