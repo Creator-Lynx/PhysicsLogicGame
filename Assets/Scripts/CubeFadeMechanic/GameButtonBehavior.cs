@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class GameButtonBehavior : MonoBehaviour, IButtonActivatable
 {
-    [SerializeField]
-    FadeCubeAction[] activeObjects;
+    [SerializeField] FadeCubeAction[] cubes;
+    [SerializeField] GameButtonBehavior[] buttons;
+    List<IButtonActivatable> activeObjects = new List<IButtonActivatable>();
+    [Header("Button state")]
     [SerializeField] bool readyTo = true;
+    [SerializeField] GameObject buttonUp, buttonDown;
+
     private void Start()
     {
+        foreach (IButtonActivatable a in cubes)
+        {
+            activeObjects.Add(a);
+        }
+        foreach (IButtonActivatable a in buttons)
+        {
+            activeObjects.Add(a);
+            Debug.Log(a.ToString());
+        }
         if (readyTo) ButtonElevate();
         else ButtonLower();
     }
@@ -23,10 +36,13 @@ public class GameButtonBehavior : MonoBehaviour, IButtonActivatable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!readyTo) return;
-        readyTo = false;
-        MakeButtonAction();
-        ButtonLower();
+        if (readyTo)
+        {
+            readyTo = false;
+            MakeButtonAction();
+            ButtonLower();
+        }
+
     }
     public void ButtonAction()
     {
@@ -36,12 +52,16 @@ public class GameButtonBehavior : MonoBehaviour, IButtonActivatable
 
     void ButtonLower()
     {
-        transform.localScale = new Vector3(1, 0.125f, 1);
+        buttonDown.SetActive(true);
+        buttonUp.SetActive(false);
+        //transform.localScale = new Vector3(1, 0.125f, 1);
     }
 
     void ButtonElevate()
     {
-        transform.localScale = new Vector3(1, 0.25f, 1);
+        buttonDown.SetActive(false);
+        buttonUp.SetActive(true);
+        //transform.localScale = new Vector3(1, 0.25f, 1);
     }
 
 
