@@ -20,7 +20,6 @@ public class GameButtonBehavior : MonoBehaviour, IButtonActivatable
         foreach (IButtonActivatable a in buttons)
         {
             activeObjects.Add(a);
-            Debug.Log(a.ToString());
         }
         if (readyTo) ButtonElevate();
         else ButtonLower();

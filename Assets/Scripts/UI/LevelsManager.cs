@@ -18,7 +18,6 @@ public class LevelsManager : MonoBehaviour
     {
         if (firstLevelInLayout != 0 && firstLevelInLayout + 31 < RGameManager.LevelsCount)
         {
-            Debug.Log(PlayerPrefs.GetInt("Completed_Levels", 0));
             if (PlayerPrefs.GetInt("Completed_Levels", 0) > firstLevelInLayout + 31 || showAllLevelsFlag)
                 CreateLevelButtons(firstLevelInLayout + 32);
             else

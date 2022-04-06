@@ -82,6 +82,7 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         Vertical *= verticalMultiplier;
         //Horizontal = axis.x;
         //Vertical = axis.y;
+
     }
     public void OnEndDrag(PointerEventData eventData)
     {
@@ -100,6 +101,5 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         Horizontal = 0;
         Vertical = 0;
     }
-
 
 }
