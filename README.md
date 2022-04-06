@@ -1,1 +1,1 @@
-Logic game that maked by tutorial, but it will develop and grow to coplete this game for publish to some store.
+Logic game that maked by tutorial, but it is (and will) developed and growing up to be complete and be a good game.
