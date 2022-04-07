@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class RGameManager : MonoBehaviour
 {
     [SerializeField] GameObject LevelScreen, SettingsScreen;
-    [SerializeField] GameObject LevelsUI, AuthorsUI;
+    [SerializeField] GameObject LevelsUI, AuthorsUI, ExitButton;
     public static int LevelsCount
     {
         get { return This.levelsCount; }
@@ -77,15 +77,7 @@ public class RGameManager : MonoBehaviour
 
     }
 
-    //показывает экран с уровнями
-    public void ShowLevelsScreen()
-    {
-        SettingsScreen.SetActive(false);
-        LevelScreen.SetActive(!LevelScreen.activeSelf);
-        AuthorsUI.SetActive(false);
-        LevelsUI.SetActive(true);
-        LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
-    }
+
 
     [Header("Settings elements")]
     [SerializeField]
@@ -97,7 +89,34 @@ public class RGameManager : MonoBehaviour
         foreach (GameObject el in settingsElements) el.SetActive(!el.activeSelf);
     }
 
-    //
+    //показывает экран с уровнями
+    public void ShowLevelsScreen()
+    {
+        SettingsScreen.SetActive(false);
+        LevelScreen.SetActive(!LevelScreen.activeSelf);
+        AuthorsUI.SetActive(false);
+        LevelsUI.SetActive(true);
+        LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
+        ExitButton.SetActive(!ExitButton.activeSelf);
+    }
+
+    public void ShowHideSettings()
+    {
+        SettingsScreen.SetActive(!SettingsScreen.activeSelf);
+        AuthorsUI.SetActive(false);
+        LevelScreen.SetActive(false);
+        foreach (GameObject el in settingsElements) if (!el.activeSelf) el.SetActive(true);
+        ExitButton.SetActive(!ExitButton.activeSelf);
+    }
+
+    public void HideAllPanels()
+    {
+        SettingsScreen.SetActive(false);
+        LevelScreen.SetActive(false);
+        ExitButton.SetActive(false);
+    }
+
+
     public void OpenAuthorsLink(int a)
     {
         if (a == 0)
@@ -109,16 +128,6 @@ public class RGameManager : MonoBehaviour
             Application.OpenURL("https://t.me/umqrahound");
         }
     }
-
-    public void ShowHideSettings()
-    {
-        SettingsScreen.SetActive(!SettingsScreen.activeSelf);
-        AuthorsUI.SetActive(false);
-        LevelScreen.SetActive(false);
-        foreach (GameObject el in settingsElements) if (!el.activeSelf) el.SetActive(true);
-    }
-
-
     // Update is called once per frame
     void Update()
     {

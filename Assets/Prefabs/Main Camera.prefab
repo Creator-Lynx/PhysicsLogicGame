@@ -376,7 +376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8949391854956367716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -385,18 +385,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305487018982934577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000065414}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000023067}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6751332194932433140}
-  - {fileID: 5853071830259568850}
   m_Father: {fileID: 4853110439567853443}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.097, y: 0.15288891}
+  m_AnchorMin: {x: 0.09543798, y: 0.15288891}
   m_AnchorMax: {x: 0.9088106, y: 0.8376112}
-  m_AnchoredPosition: {x: -1.4595337, y: 0.44000244}
-  m_SizeDelta: {x: 1.1999512, y: 2.540001}
+  m_AnchoredPosition: {x: -0.46002197, y: -1.7575073}
+  m_SizeDelta: {x: -0.8000002, y: -1.8549995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &601035589028669076
 CanvasRenderer:
@@ -795,7 +794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1042360211229754878
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1072,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4853110439567853443}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1233,7 +1232,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4853110439567853443}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1406,7 +1405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4490100454191305521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1415,7 +1414,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4552455268663491133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000040306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1042360211229754878}
@@ -1427,12 +1426,12 @@ RectTransform:
   - {fileID: 4147705322548547750}
   - {fileID: 3641624562639073787}
   m_Father: {fileID: 4853110439567853443}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.089303724, y: 0.13066666}
-  m_AnchorMax: {x: 0.9081105, y: 0.86272234}
-  m_AnchoredPosition: {x: 0, y: -0.55566406}
-  m_SizeDelta: {x: -0.00018310547, y: -1.111145}
+  m_AnchorMin: {x: 0.09468606, y: 0.15288891}
+  m_AnchorMax: {x: 0.90887606, y: 0.8376112}
+  m_AnchoredPosition: {x: -0.10272217, y: -1.7600098}
+  m_SizeDelta: {x: -1.7950001, y: -1.8499985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &150073436175168403
 CanvasRenderer:
@@ -1659,7 +1658,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4853110439567853443}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1960,6 +1959,7 @@ MonoBehaviour:
   SettingsScreen: {fileID: 4552455268663491133}
   LevelsUI: {fileID: 4436525737350615275}
   AuthorsUI: {fileID: 5595327385708184908}
+  ExitButton: {fileID: 8909525765691555836}
   levelsCount: 42
   settingsElements:
   - {fileID: 8834622702969386727}
@@ -2135,6 +2135,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4853110439592752349}
+  - {fileID: 5853071830259568850}
   - {fileID: 4853110439202173033}
   - {fileID: 7739872359067241646}
   - {fileID: 7259283143416978459}
@@ -2631,7 +2632,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4853110439567853443}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3199,13 +3200,13 @@ GameObject:
   - component: {fileID: 5439498876332801572}
   - component: {fileID: 289457200003197592}
   - component: {fileID: 240295724087996192}
-  m_Layer: 5
+  m_Layer: 3
   m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5853071830259568850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3213,17 +3214,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8909525765691555836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00001516}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 105.00021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8949391854956367716}
+  m_Father: {fileID: 4853110439567853443}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -40, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: -641.6179, y: -358.20996}
+  m_SizeDelta: {x: 1287.13, y: 724.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5439498876332801572
 CanvasRenderer:
@@ -3246,15 +3247,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 321d1867cb1ed52468bc330dfa7a685d, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3308,8 +3309,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4853110439345720846}
-        m_TargetAssemblyTypeName: PurchaseManager, Assembly-CSharp
-        m_MethodName: ShowLevelsScreen
+        m_TargetAssemblyTypeName: RGameManager, Assembly-CSharp
+        m_MethodName: HideAllPanels
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
