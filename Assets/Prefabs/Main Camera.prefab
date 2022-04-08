@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 8949391854956367716}
   - component: {fileID: 601035589028669076}
   - component: {fileID: 7256352506128254005}
+  - component: {fileID: 8053211041153017991}
   m_Layer: 5
   m_Name: LevelScreen
   m_TagString: Untagged
@@ -435,6 +436,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!111 &8053211041153017991
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305487018982934577}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 0db426b554cc2d643aa028e80cf2f8a1, type: 2}
+  - {fileID: 7400000, guid: 4313f0ef74384664893ef77506eaa687, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1329112967515079522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4490100454191305521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2766,7 +2784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.113000005, y: 0.11360502}
   m_AnchorMax: {x: 0.892, y: 0.89429635}
-  m_AnchoredPosition: {x: 0.8352051, y: -0.3394165}
+  m_AnchoredPosition: {x: 0.8352051, y: -0.33940125}
   m_SizeDelta: {x: 1.6704102, y: -0.6786499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3101028109322837026
