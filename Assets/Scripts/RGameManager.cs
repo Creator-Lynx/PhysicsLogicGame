@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class RGameManager : MonoBehaviour
@@ -73,6 +75,28 @@ public class RGameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("Completed_Levels", 0))
         {
             PlayerPrefs.SetInt("Completed_Levels", PlayerPrefs.GetInt("Completed_Levels", 0) + 1);
+            //analitics
+#if UNITY_EDITOR
+            AnalyticsResult res = Analytics.CustomEvent(
+                "LevelComplete", new Dictionary<string, object>
+                {
+                    {"Number", PlayerPrefs.GetInt("Completed_Levels", 0)},
+                    {"Name", SceneManager.GetActiveScene().name},
+                    {"Develop", true}
+                }
+            );
+            Debug.Log("analytics send result" + res);
+            return;
+#endif
+            Analytics.CustomEvent(
+                "LevelComplete", new Dictionary<string, object>
+                {
+                    {"Number", PlayerPrefs.GetInt("Completed_Levels", 0)},
+                    {"Name", SceneManager.GetActiveScene().name},
+                    {"Develop", false}
+                }
+            );
+
         }
 
     }
