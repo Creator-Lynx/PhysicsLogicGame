@@ -14,7 +14,7 @@ public class RGameManager : MonoBehaviour
         get { return This.levelsCount; }
         set { This.levelsCount = value; }
     }
-    static RGameManager This;
+    public static RGameManager This;
     [Header("Levels")]
     [SerializeField] int levelsCount;
     static bool isFirstStart = true;
@@ -129,12 +129,11 @@ public class RGameManager : MonoBehaviour
             SettingsScreen.SetActive(false);
             LevelScreen.SetActive(true);
             AuthorsUI.SetActive(false);
-            LevelsUI.SetActive(true);
-            LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
             ExitButton.SetActive(!ExitButton.activeSelf);
             lvlScreenAnimating = true;
             LevelScreenAnim.Play("LevelsOpen");
             lvlScreenActiving = true;
+            LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
         }
         else
         {
@@ -149,7 +148,14 @@ public class RGameManager : MonoBehaviour
     public void OnLevelsAnimationEnd(bool isOpenAnim)
     {
         lvlScreenAnimating = false;
-        if (!isOpenAnim) LevelScreen.SetActive(false);
+        if (isOpenAnim)
+        {
+
+        }
+        else
+        {
+            LevelScreen.SetActive(false);
+        }
     }
 
     public void ShowHideSettings()

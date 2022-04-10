@@ -51,9 +51,8 @@ public class LevelsManager : MonoBehaviour
         }
         for (int i = firstLevel; i <= lastLevel; i++)
         {
-            GameObject b = Instantiate(levelButton, Vector3.zero, Quaternion.identity, grid);
+            GameObject b = Instantiate(levelButton, grid.transform.position, Quaternion.identity, grid);
             b.transform.localEulerAngles = Vector3.zero;
-            b.transform.localScale = Vector3.one * 2;
             b.GetComponent<ButtonsBehaviors>().level = i;
             b.GetComponent<Text>().text = i.ToString();
             if (i > completedLevels + 1) b.GetComponent<Button>().interactable = false;
