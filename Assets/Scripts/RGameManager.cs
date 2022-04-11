@@ -21,7 +21,7 @@ public class RGameManager : MonoBehaviour
 
     private void Start()
     {
-        This = GetComponent<RGameManager>();
+
         GameObject[] objs = GameObject.FindGameObjectsWithTag("MainCamera");
 
 
@@ -31,6 +31,7 @@ public class RGameManager : MonoBehaviour
         }
         else
         {
+            This = GetComponent<RGameManager>();
             DontDestroyOnLoad(this.gameObject);
         }
 
@@ -118,29 +119,29 @@ public class RGameManager : MonoBehaviour
         foreach (GameObject el in settingsElements) el.SetActive(!el.activeSelf);
     }
 
-    bool lvlScreenActiving = false, SettScreenActiving = false;
+    //bool lvlScreenActiving = false, SettScreenActiving = false;
     bool lvlScreenAnimating = false, SettScreenAnimating = false;
+    bool needToOffExitButton = true;
     //показывает экран с уровнями
-    public void ShowLevelsScreen()
+    public void ShowHideLevelsScreen(bool needToOpen = true)
     {
         if (lvlScreenAnimating) return;
-        if (!lvlScreenActiving)
+        if (!LevelScreen.activeSelf && needToOpen)
         {
-            SettingsScreen.SetActive(false);
             LevelScreen.SetActive(true);
             AuthorsUI.SetActive(false);
-            ExitButton.SetActive(!ExitButton.activeSelf);
+            ExitButton.SetActive(true);
+            ShowHideSettings(false);
             lvlScreenAnimating = true;
             LevelScreenAnim.Play("LevelsOpen");
-            lvlScreenActiving = true;
             LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
+            needToOffExitButton = false;
         }
-        else
+        else if (LevelScreen.activeSelf)
         {
-            ExitButton.SetActive(!ExitButton.activeSelf);
             LevelScreenAnim.Play("LevelsClose");
             lvlScreenAnimating = true;
-            lvlScreenActiving = false;
+            if (needToOffExitButton) ExitButton.SetActive(false);
         }
 
     }
@@ -150,7 +151,7 @@ public class RGameManager : MonoBehaviour
         lvlScreenAnimating = false;
         if (isOpenAnim)
         {
-
+            needToOffExitButton = true;
         }
         else
         {
@@ -158,25 +159,50 @@ public class RGameManager : MonoBehaviour
         }
     }
 
-    public void ShowHideSettings()
+    public void ShowHideSettings(bool needToOpen = true)
     {
-        SettingsScreen.SetActive(!SettingsScreen.activeSelf);
-        AuthorsUI.SetActive(false);
-        LevelScreen.SetActive(false);
-        foreach (GameObject el in settingsElements) if (!el.activeSelf) el.SetActive(true);
-        ExitButton.SetActive(!ExitButton.activeSelf);
+        if (SettScreenAnimating) return;
+        if (!SettingsScreen.activeSelf && needToOpen)
+        {
+            SettScreenAnimating = true;
+            SettingsScreen.SetActive(true);
+            AuthorsUI.SetActive(false);
+            ShowHideLevelsScreen(false);
+            needToOffExitButton = false;
+            ExitButton.SetActive(true);
+            SettingsScreenAnim.Play("SettingsOpen");
+        }
+        else if (SettingsScreen.activeSelf)
+        {
+            SettingsScreenAnim.Play("SettingsClose");
+            SettScreenAnimating = true;
+            AuthorsUI.SetActive(false);
+            if (needToOffExitButton) ExitButton.SetActive(false);
+
+        }
+
+
+
     }
 
     public void OnSettingsAnimationEnd(bool isOpenAnim)
     {
-        lvlScreenAnimating = false;
-        if (!isOpenAnim) LevelScreen.SetActive(false);
+        SettScreenAnimating = false;
+        if (isOpenAnim)
+        {
+            needToOffExitButton = true;
+
+        }
+        else
+        {
+            SettingsScreen.SetActive(false);
+        }
     }
 
     public void HideAllPanels()
     {
-        ShowLevelsScreen();
-        SettingsScreen.SetActive(false);
+        ShowHideLevelsScreen(false);
+        ShowHideSettings(false);
         ExitButton.SetActive(false);
     }
 

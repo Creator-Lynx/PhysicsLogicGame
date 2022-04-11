@@ -378,7 +378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8949391854956367716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1353,16 +1353,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4853110439345720846}
-        m_TargetAssemblyTypeName: PurchaseManager, Assembly-CSharp
-        m_MethodName: ShowLevelsScreen
-        m_Mode: 1
+        m_TargetAssemblyTypeName: RGameManager, Assembly-CSharp
+        m_MethodName: ShowHideLevelsScreen
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &4436525737350615275
 GameObject:
@@ -1431,6 +1431,7 @@ GameObject:
   - component: {fileID: 150073436175168403}
   - component: {fileID: 273587312057883750}
   - component: {fileID: 3149102167874793076}
+  - component: {fileID: 7927717961589201024}
   m_Layer: 5
   m_Name: SettingsScreen
   m_TagString: Untagged
@@ -1446,7 +1447,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4552455268663491133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000040306}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00026421}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1042360211229754878}
@@ -1515,6 +1516,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d960da2fea53944d849228052906962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &7927717961589201024
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552455268663491133}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 78e63159e25fe834b835c54f332d0493, type: 2}
+  - {fileID: 7400000, guid: 85a1c763a3ca08445aa5414a78af5d69, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4560775255103736947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13214053, y: 0.093}
   m_AnchorMax: {x: 0.522, y: 0.4143096}
-  m_AnchoredPosition: {x: 0.100097656, y: -0.4000244}
+  m_AnchoredPosition: {x: 0.100097656, y: -0.40000916}
   m_SizeDelta: {x: 2.6059875, y: -2.4208984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9120174499811291094
@@ -2768,14 +2786,14 @@ MonoBehaviour:
       - m_Target: {fileID: 4853110439345720846}
         m_TargetAssemblyTypeName: RGameManager, Assembly-CSharp
         m_MethodName: ShowHideSettings
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &7820360026707387889
 GameObject:

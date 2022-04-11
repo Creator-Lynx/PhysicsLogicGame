@@ -14,10 +14,10 @@ public class PanelsAnimationController : MonoBehaviour
     }
     public void OnSettingsScreenOpenAnimationEnd()
     {
-
+        RGameManager.This.OnSettingsAnimationEnd(true);
     }
     public void OnSettingsScreenCloseAnimationEnd()
     {
-
+        RGameManager.This.OnSettingsAnimationEnd(false);
     }
 }
