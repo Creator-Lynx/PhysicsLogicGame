@@ -61,10 +61,14 @@ public class RGameManager : MonoBehaviour
     public void RestartScene()
     {
         if (SceneManager.GetActiveScene().buildIndex != SceneManager.sceneCountInBuildSettings - 1)
+        {
+            OnLevelEnd();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            OnLevelEnd();
             //something what reset object positions in the generated scene
         }
 
@@ -83,31 +87,41 @@ public class RGameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Completed_Levels", PlayerPrefs.GetInt("Completed_Levels", 0) + 1);
             //analitics
-#if UNITY_EDITOR
-            AnalyticsResult res = Analytics.CustomEvent(
-                "LevelComplete", new Dictionary<string, object>
-                {
-                    {"Number", PlayerPrefs.GetInt("Completed_Levels", 0)},
-                    {"Name", SceneManager.GetActiveScene().name},
-                    {"Develop", true}
-                }
-            );
-            Debug.Log("analytics send result" + res);
-#else
-            Analytics.CustomEvent(
-                "LevelComplete", new Dictionary<string, object>
-                {
-                    {"Number", PlayerPrefs.GetInt("Completed_Levels", 0)},
-                    {"Name", SceneManager.GetActiveScene().name},
-                    {"Develop", false}
-                }
-            );
-#endif
+            OnLevelComplete();
+            OnLevelEnd();
         }
 
     }
 
 
+    public static void OnLevelComplete()
+    {
+#if UNITY_EDITOR
+#else
+        Analytics.CustomEvent(
+            "LevelComplete", new Dictionary<string, object>
+            {
+                {"Number", PlayerPrefs.GetInt("Completed_Levels", 0)},
+                {"Name", SceneManager.GetActiveScene().name}
+            }
+        );
+            
+#endif
+    }
+    public static void OnLevelEnd()
+    {
+#if UNITY_EDITOR
+#else
+        Analytics.CustomEvent(
+        "LevelEnd", new Dictionary<string, object>
+            {
+                {"Number", SceneManager.GetActiveScene().buildIndex},
+                {"Name", SceneManager.GetActiveScene().name},
+                {"Time", Time.timeSinceLevelLoad }
+            }
+        );
+#endif
+    }
 
     [Header("Settings elements")]
     [SerializeField]

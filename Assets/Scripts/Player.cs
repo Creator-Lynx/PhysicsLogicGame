@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
             {
                 RGameManager.SetComleteLevel();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
 
             }
             else
