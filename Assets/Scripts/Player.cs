@@ -33,15 +33,14 @@ public class Player : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex != SceneManager.sceneCountInBuildSettings - 1)
             {
                 RGameManager.SetComleteLevel();
+                RGameManager.OnLevelEnd();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-
             }
             else
             {
                 RGameManager.SetComleteLevel();
+                RGameManager.OnLevelEnd();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
             }
         }
     }

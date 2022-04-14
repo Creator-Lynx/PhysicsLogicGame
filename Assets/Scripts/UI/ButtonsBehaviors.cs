@@ -17,6 +17,7 @@ public class ButtonsBehaviors : MonoBehaviour
     bool themeButton = false;
     public void StartLevel()
     {
+        RGameManager.OnLevelEnd();
         SceneManager.LoadScene(level);
     }
 

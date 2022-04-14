@@ -20,4 +20,8 @@ public class PanelsAnimationController : MonoBehaviour
     {
         RGameManager.This.OnSettingsAnimationEnd(false);
     }
+    public void OnAnalyticMessegeCloseAnimEnd()
+    {
+        gameObject.SetActive(false);
+    }
 }

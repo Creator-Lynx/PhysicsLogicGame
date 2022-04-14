@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class RGameManager : MonoBehaviour
 {
-    [SerializeField] GameObject LevelScreen, SettingsScreen;
+    [SerializeField] GameObject LevelScreen, SettingsScreen, AnalyticsMessage;
     Animation LevelScreenAnim, SettingsScreenAnim;
     [SerializeField] GameObject LevelsUI, AuthorsUI, ExitButton;
     public static int LevelsCount
@@ -88,7 +88,6 @@ public class RGameManager : MonoBehaviour
             PlayerPrefs.SetInt("Completed_Levels", PlayerPrefs.GetInt("Completed_Levels", 0) + 1);
             //analitics
             OnLevelComplete();
-            OnLevelEnd();
         }
 
     }
@@ -98,21 +97,22 @@ public class RGameManager : MonoBehaviour
     {
 #if UNITY_EDITOR
 #else
-        Analytics.CustomEvent(
+        AnalyticsResult res = Analytics.CustomEvent(
             "LevelComplete", new Dictionary<string, object>
             {
                 {"Number", PlayerPrefs.GetInt("Completed_Levels", 0)},
                 {"Name", SceneManager.GetActiveScene().name}
             }
         );
-            
+        if (res == AnalyticsResult.AnalyticsDisabled || res == AnalyticsResult.NotInitialized || res == AnalyticsResult.UnsupportedPlatform)
+            This.ShowMessageOnFailedSendAnalytics();    
 #endif
     }
     public static void OnLevelEnd()
     {
 #if UNITY_EDITOR
 #else
-        Analytics.CustomEvent(
+        AnalyticsResult res = Analytics.CustomEvent(
         "LevelEnd", new Dictionary<string, object>
             {
                 {"Number", SceneManager.GetActiveScene().buildIndex},
@@ -120,7 +120,25 @@ public class RGameManager : MonoBehaviour
                 {"Time", Time.timeSinceLevelLoad }
             }
         );
+        if (res == AnalyticsResult.AnalyticsDisabled || res == AnalyticsResult.NotInitialized || res == AnalyticsResult.UnsupportedPlatform)
+            This.ShowMessageOnFailedSendAnalytics();
 #endif
+    }
+
+    public void ShowMessageOnFailedSendAnalytics()
+    {
+        if (PlayerPrefs.GetInt("NeverAsk", 0) == 0)
+        {
+            AnalyticsMessage.SetActive(true);
+            AnalyticsMessage.GetComponent<Animation>().Play("AnalyticOpen");
+        }
+        else return;
+    }
+    public void HideMessagesOnFailedAnalitics(bool NeverShow)
+    {
+        if (NeverShow)
+            PlayerPrefs.GetInt("NeverAsk", 1);
+        AnalyticsMessage.GetComponent<Animation>().Play("AnalyticClose");
     }
 
     [Header("Settings elements")]
