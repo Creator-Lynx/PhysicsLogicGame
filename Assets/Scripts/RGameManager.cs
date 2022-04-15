@@ -56,6 +56,7 @@ public class RGameManager : MonoBehaviour
         LevelScreen.SetActive(false);
         LevelScreenAnim = LevelScreen.GetComponent<Animation>();
         SettingsScreenAnim = SettingsScreen.GetComponent<Animation>();
+
     }
 
     public void RestartScene()
@@ -117,7 +118,8 @@ public class RGameManager : MonoBehaviour
             {
                 {"Number", SceneManager.GetActiveScene().buildIndex},
                 {"Name", SceneManager.GetActiveScene().name},
-                {"Time", Time.timeSinceLevelLoad }
+                {"Time", Time.timeSinceLevelLoad },
+                {"Try", 1 }
             }
         );
         if (res == AnalyticsResult.AnalyticsDisabled || res == AnalyticsResult.NotInitialized || res == AnalyticsResult.UnsupportedPlatform)

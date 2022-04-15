@@ -22,8 +22,19 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         invertK = invertMovement ? -1 : 1;
-        _rig.velocity += new Vector3(isHor ? -speed.x * Controll.Horizontal * invertK : 0f, _rig.velocity.y,
-         isVert ? -speed.z * Controll.Vertical * invertK : 0f);
+        Vector3 horDirection =
+            new Vector3(isHor ? -speed.x * Controll.Horizontal * invertK : 0f, 0f, 0f);
+        Vector3 vertDirection =
+            new Vector3(0f, 0f, isVert ? -speed.z * Controll.Vertical * invertK : 0f);
+
+        bool enanbleHor = !Physics.Raycast(transform.position, horDirection, transform.localScale.x / 2);
+        bool enanbleVert = !Physics.Raycast(transform.position, vertDirection, transform.localScale.z / 2);
+
+        //for disable
+        enanbleHor = true;
+        enanbleVert = true;
+        _rig.velocity += enanbleHor ? horDirection : Vector3.zero;
+        _rig.velocity += enanbleVert ? vertDirection : Vector3.zero;
     }
 
     private void OnTriggerEnter(Collider other)
