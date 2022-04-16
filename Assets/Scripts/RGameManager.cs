@@ -99,7 +99,7 @@ public class RGameManager : MonoBehaviour
 #if UNITY_EDITOR
 #else
         AnalyticsResult res = Analytics.CustomEvent(
-            "LevelComplete", new Dictionary<string, object>
+            "LvlComplete", new Dictionary<string, object>
             {
                 {"Number", PlayerPrefs.GetInt("Completed_Levels", 0)},
                 {"Name", SceneManager.GetActiveScene().name}
@@ -114,7 +114,7 @@ public class RGameManager : MonoBehaviour
 #if UNITY_EDITOR
 #else
         AnalyticsResult res = Analytics.CustomEvent(
-        "LevelEnd", new Dictionary<string, object>
+        "LvlEnd", new Dictionary<string, object>
             {
                 {"Number", SceneManager.GetActiveScene().buildIndex},
                 {"Name", SceneManager.GetActiveScene().name},
