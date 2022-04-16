@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class RaycastCubesChecker : MonoBehaviour
 {
+
     void Start()
     {
         VerticalChecker();
-        string s = "";
-        for (int i = 0; i < 9; i++)
-        {
-            for (int j = 0; j < 9; j++)
-            {
-                s += (cubeMatrix[i, j] ? 1 : 0) + " ";
-
-            }
-            s += '\n';
-        }
-        Debug.Log(s);
+        ShowCubeMatrix();// testing
+        SetVectorsList();
     }
+    void Update() //testing
+    {
+        foreach (var v in upVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.forward * 0.7f, Color.red, Time.deltaTime);
+        }
+        foreach (var v in downVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.back * 0.7f, Color.red, Time.deltaTime);
+        }
+        foreach (var v in leftVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.left * 0.7f, Color.red, Time.deltaTime);
+        }
+        foreach (var v in rightVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.right * 0.7f, Color.red, Time.deltaTime);
+        }
+    }
+
     bool[,] cubeMatrix = new bool[9, 9];
     //throw vertical rays to check, where cube is
     void VerticalChecker()
@@ -56,5 +68,58 @@ public class RaycastCubesChecker : MonoBehaviour
                 }
             }
         }
+    }
+    void ShowCubeMatrix()
+    {
+        string s = "";
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                s += (cubeMatrix[i, j] ? 1 : 0) + " ";
+
+            }
+            s += '\n';
+        }
+        Debug.Log(s);
+    }
+
+
+    List<Vector3> upVectors = new List<Vector3>(),
+    downVectors = new List<Vector3>(),
+    leftVectors = new List<Vector3>(),
+    rightVectors = new List<Vector3>();
+
+    void SetVectorsList()
+    {
+        bool Check(int x, int z, int dx, int dz)
+        {
+            if (x + dx < cubeMatrix.Length && z + dz < cubeMatrix.Length && x + dx >= 0 && z + dz >= 0)
+            {
+                if (cubeMatrix[x, z + 1])
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else return true;
+        }
+        for (int x = -4; x <= 4; x++)
+            for (int z = -4; z <= 4; z++)
+            {
+                int i = x + 4;
+                int j = z + 4;
+                if (cubeMatrix[i, j])
+                {
+                    if (Check(i, j, 0, 1)) upVectors.Add(new Vector3(x, 0, z));
+                    if (Check(i, j, 0, -1)) downVectors.Add(new Vector3(x, 0, z));
+                    if (Check(i, j, -1, 0)) leftVectors.Add(new Vector3(x, 0, z));
+                    if (Check(i, j, 1, 1)) rightVectors.Add(new Vector3(x, 0, z));
+                }
+
+            }
     }
 }
