@@ -8,27 +8,14 @@ public class RaycastCubesChecker : MonoBehaviour
     void Start()
     {
         VerticalChecker();
-        ShowCubeMatrix();// testing
+        //ShowCubeMatrix();// testing
         SetVectorsList();
+        //ShowVectors(); // testing
+
     }
     void Update() //testing
     {
-        foreach (var v in upVectors)
-        {
-            Debug.DrawRay(transform.position + v, Vector3.forward * 0.7f, Color.red, Time.deltaTime);
-        }
-        foreach (var v in downVectors)
-        {
-            Debug.DrawRay(transform.position + v, Vector3.back * 0.7f, Color.red, Time.deltaTime);
-        }
-        foreach (var v in leftVectors)
-        {
-            Debug.DrawRay(transform.position + v, Vector3.left * 0.7f, Color.red, Time.deltaTime);
-        }
-        foreach (var v in rightVectors)
-        {
-            Debug.DrawRay(transform.position + v, Vector3.right * 0.7f, Color.red, Time.deltaTime);
-        }
+        DrawVectors();
     }
 
     bool[,] cubeMatrix = new bool[9, 9];
@@ -43,7 +30,7 @@ public class RaycastCubesChecker : MonoBehaviour
             {
                 //cast the ray
                 Vector3 rayStart = startCheckPos + new Vector3(i, 3f, j);
-                Debug.DrawRay(rayStart, Vector3.down * 3, Color.blue, 10f);
+                Debug.DrawRay(rayStart, Vector3.down * 3, Color.blue, 4f);
                 RaycastHit[] coll = Physics.RaycastAll(rayStart, Vector3.down, 10);
                 foreach (var c in coll)
                 {
@@ -84,7 +71,45 @@ public class RaycastCubesChecker : MonoBehaviour
         Debug.Log(s);
     }
 
+    void ShowVectors()
+    {
+        foreach (var v in upVectors)
+        {
+            Debug.Log(v + "UpVector");
+        }
+        foreach (var v in downVectors)
+        {
+            Debug.Log(v + "DownVector");
+        }
+        foreach (var v in leftVectors)
+        {
+            Debug.Log(v + "LeftVector");
+        }
+        foreach (var v in rightVectors)
+        {
+            Debug.Log(v + "RightVector");
+        }
 
+    }
+    void DrawVectors()
+    {
+        foreach (var v in upVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.forward * 0.7f, Color.red, Time.deltaTime);
+        }
+        foreach (var v in downVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.back * 0.7f, Color.red, Time.deltaTime);
+        }
+        foreach (var v in leftVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.left * 0.7f, Color.red, Time.deltaTime);
+        }
+        foreach (var v in rightVectors)
+        {
+            Debug.DrawRay(transform.position + v, Vector3.right * 0.7f, Color.red, Time.deltaTime);
+        }
+    }
     List<Vector3> upVectors = new List<Vector3>(),
     downVectors = new List<Vector3>(),
     leftVectors = new List<Vector3>(),
@@ -96,7 +121,7 @@ public class RaycastCubesChecker : MonoBehaviour
         {
             if (x + dx < cubeMatrix.Length && z + dz < cubeMatrix.Length && x + dx >= 0 && z + dz >= 0)
             {
-                if (cubeMatrix[x, z + 1])
+                if (cubeMatrix[x + dx, z + dz])
                 {
                     return false;
                 }
@@ -117,9 +142,72 @@ public class RaycastCubesChecker : MonoBehaviour
                     if (Check(i, j, 0, 1)) upVectors.Add(new Vector3(x, 0, z));
                     if (Check(i, j, 0, -1)) downVectors.Add(new Vector3(x, 0, z));
                     if (Check(i, j, -1, 0)) leftVectors.Add(new Vector3(x, 0, z));
-                    if (Check(i, j, 1, 1)) rightVectors.Add(new Vector3(x, 0, z));
+                    if (Check(i, j, 1, 0)) rightVectors.Add(new Vector3(x, 0, z));
                 }
 
             }
+    }
+
+
+    [SerializeField] float rayDistance = 0.5f;
+    public bool CastForwardVectors()
+    {
+        bool res = false;
+        foreach (var v in upVectors)
+        {
+            if (Physics.Raycast(transform.position + v, Vector3.forward, out RaycastHit hitInfo, rayDistance))
+                if (!hitInfo.collider.isTrigger)
+                {
+                    res = true;
+                    break;
+                }
+
+        }
+        return res;
+    }
+    public bool CastBackwardVectors()
+    {
+        bool res = false;
+        foreach (var v in downVectors)
+        {
+            if (Physics.Raycast(transform.position + v, Vector3.forward, out RaycastHit hitInfo, rayDistance))
+                if (!hitInfo.collider.isTrigger)
+                {
+                    res = true;
+                    break;
+                }
+
+        }
+        return res;
+    }
+    public bool CastLeftVectors()
+    {
+        bool res = false;
+        foreach (var v in leftVectors)
+        {
+            if (Physics.Raycast(transform.position + v, Vector3.forward, out RaycastHit hitInfo, rayDistance))
+                if (!hitInfo.collider.isTrigger)
+                {
+                    res = true;
+                    break;
+                }
+
+        }
+        return res;
+    }
+    public bool CastRightVectors()
+    {
+        bool res = false;
+        foreach (var v in rightVectors)
+        {
+            if (Physics.Raycast(transform.position + v, Vector3.forward, out RaycastHit hitInfo, rayDistance))
+                if (!hitInfo.collider.isTrigger)
+                {
+                    res = true;
+                    break;
+                }
+
+        }
+        return res;
     }
 }
