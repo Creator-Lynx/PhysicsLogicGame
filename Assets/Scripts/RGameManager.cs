@@ -165,11 +165,12 @@ public class RGameManager : MonoBehaviour
             LevelScreen.SetActive(true);
             AuthorsUI.SetActive(false);
             ExitButton.SetActive(true);
+            needToOffExitButton = false;
             ShowHideSettings(false);
             lvlScreenAnimating = true;
             LevelScreenAnim.Play("LevelsOpen");
             LevelScreen.GetComponentInChildren<LevelsManager>().CreateLevelButtons();
-            needToOffExitButton = false;
+
         }
         else if (LevelScreen.activeSelf)
         {
@@ -201,8 +202,9 @@ public class RGameManager : MonoBehaviour
             SettScreenAnimating = true;
             SettingsScreen.SetActive(true);
             AuthorsUI.SetActive(false);
-            ShowHideLevelsScreen(false);
             needToOffExitButton = false;
+            ShowHideLevelsScreen(false);
+
             ExitButton.SetActive(true);
             SettingsScreenAnim.Play("SettingsOpen");
         }
