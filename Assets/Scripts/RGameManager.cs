@@ -9,6 +9,7 @@ public class RGameManager : MonoBehaviour
     [SerializeField] GameObject LevelScreen, SettingsScreen, AnalyticsMessage;
     Animation LevelScreenAnim, SettingsScreenAnim;
     [SerializeField] GameObject LevelsUI, AuthorsUI, ExitButton;
+    [SerializeField] AudioSource LevelCompleteAudio;
     public static int LevelsCount
     {
         get { return This.levelsCount; }
@@ -112,6 +113,7 @@ public class RGameManager : MonoBehaviour
     public static void OnLevelEnd()
     {
 #if UNITY_EDITOR
+        Debug.Log(Time.timeSinceLevelLoad);
 #else
         AnalyticsResult res = Analytics.CustomEvent(
         "LvlEnd", new Dictionary<string, object>
@@ -127,6 +129,10 @@ public class RGameManager : MonoBehaviour
 #endif
     }
 
+    public static void PlayCompleteAudio()
+    {
+        This.LevelCompleteAudio.Play();
+    }
     public void ShowMessageOnFailedSendAnalytics()
     {
         if (PlayerPrefs.GetInt("NeverAsk", 0) == 0)

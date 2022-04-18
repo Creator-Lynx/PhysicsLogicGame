@@ -45,12 +45,14 @@ public class Player : MonoBehaviour
             {
                 RGameManager.SetComleteLevel();
                 RGameManager.OnLevelEnd();
+                RGameManager.PlayCompleteAudio();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else
             {
                 RGameManager.SetComleteLevel();
                 RGameManager.OnLevelEnd();
+                RGameManager.PlayCompleteAudio();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

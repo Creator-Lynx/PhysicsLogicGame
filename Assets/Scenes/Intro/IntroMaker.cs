@@ -7,29 +7,32 @@ public class IntroMaker : MonoBehaviour
 {
     [SerializeField]
     AudioSource introAudio, textAudio;
-
+    AsyncOperation sceneLoading;
     private void Start()
     {
 #if UNITY_EDITOR
-        PlayerPrefs.SetInt("IsFirstStart", 1);
+        //PlayerPrefs.SetInt("IsFirstStart", 1);
 #endif
+
         if (PlayerPrefs.GetInt("IsFirstStart", 1) == 1)
         {
             GetComponent<Animator>().SetBool("splash", false);
         }
-
-
-
+        sceneLoading = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        sceneLoading.allowSceneActivation = false;
+        DontDestroyOnLoad(textAudio.gameObject);
+        Destroy(textAudio, 10f);
     }
     public void LoadGameScene()
     {
         PlayerPrefs.SetInt("IsFirstStart", 0);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        sceneLoading.allowSceneActivation = true;
     }
 
     public void PlayTextSound()
     {
-        //textAudio.Play();
+        textAudio.Play();
     }
     public void PlayIntroSound()
     {
