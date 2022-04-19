@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         invertK = invertMovement ? -1 : 1;
         float hor = isHor ? -speed.x * Controll.Horizontal * invertK : 0f;
         float ver = isVert ? -speed.z * Controll.Vertical * invertK : 0f;
-        if (hor > 0)
+        /*if (hor > 0)
         {
             if (checker.CastRightRays()) hor = 0;
         }
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         else
         {
             if (checker.CastBackwardRays()) ver = 0;
-        }
+        }*/
 
 
         _rig.velocity += new Vector3(hor, 0f, ver);
