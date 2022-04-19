@@ -42,13 +42,12 @@ public class RaycastCubesChecker : MonoBehaviour
                     {
                         int find = name.IndexOf(' ');
                         int target = find == -1 ? name.Length : find;
-                        if (c.collider.name.Substring(0, target) == name.Substring(0, target) && c.collider.transform.parent != null)
-                        {
+                        if (c.collider.transform.parent != null)
                             if (c.collider.transform.parent == transform)
-                            {
-                                cubeMatrix[i, j] = true;
-                            }
-                        }
+                                if (c.collider.name.Substring(0, target) == name.Substring(0, target))
+                                {
+                                    cubeMatrix[i, j] = true;
+                                }
 
                     }
 
@@ -95,19 +94,19 @@ public class RaycastCubesChecker : MonoBehaviour
     {
         foreach (var v in upVectors)
         {
-            Debug.DrawRay(transform.position + v, Vector3.forward * 0.7f, Color.red, Time.deltaTime);
+            Debug.DrawRay(transform.position + v, Vector3.forward * rayDistance, Color.red, Time.deltaTime);
         }
         foreach (var v in downVectors)
         {
-            Debug.DrawRay(transform.position + v, Vector3.back * 0.7f, Color.red, Time.deltaTime);
+            Debug.DrawRay(transform.position + v, Vector3.back * rayDistance, Color.red, Time.deltaTime);
         }
         foreach (var v in leftVectors)
         {
-            Debug.DrawRay(transform.position + v, Vector3.left * 0.7f, Color.red, Time.deltaTime);
+            Debug.DrawRay(transform.position + v, Vector3.left * rayDistance, Color.red, Time.deltaTime);
         }
         foreach (var v in rightVectors)
         {
-            Debug.DrawRay(transform.position + v, Vector3.right * 0.7f, Color.red, Time.deltaTime);
+            Debug.DrawRay(transform.position + v, Vector3.right * rayDistance, Color.red, Time.deltaTime);
         }
     }
     List<Vector3> upVectors = new List<Vector3>(),
@@ -150,7 +149,7 @@ public class RaycastCubesChecker : MonoBehaviour
 
 
     [SerializeField] float rayDistance = 0.5f;
-    public bool CastForwardVectors()
+    public bool CastForwardRays()
     {
         bool res = false;
         foreach (var v in upVectors)
@@ -165,7 +164,7 @@ public class RaycastCubesChecker : MonoBehaviour
         }
         return res;
     }
-    public bool CastBackwardVectors()
+    public bool CastBackwardRays()
     {
         bool res = false;
         foreach (var v in downVectors)
@@ -180,7 +179,7 @@ public class RaycastCubesChecker : MonoBehaviour
         }
         return res;
     }
-    public bool CastLeftVectors()
+    public bool CastLeftRays()
     {
         bool res = false;
         foreach (var v in leftVectors)
@@ -195,7 +194,7 @@ public class RaycastCubesChecker : MonoBehaviour
         }
         return res;
     }
-    public bool CastRightVectors()
+    public bool CastRightRays()
     {
         bool res = false;
         foreach (var v in rightVectors)

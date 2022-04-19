@@ -6,8 +6,10 @@ public class testController : MonoBehaviour
 {
     Rigidbody rig;
     float speed = 5f;
+    RaycastCubesChecker checker;
     void Start()
     {
+        checker = GetComponent<RaycastCubesChecker>();
         rig = GetComponent<Rigidbody>();
     }
     // use some input
@@ -21,8 +23,24 @@ public class testController : MonoBehaviour
     // test moving by input with raycast checker condition
     void FixedUpdate()
     {
-        Vector3 hor = new Vector3(horInput, 0f, 0f) * speed;
-        Vector3 ver = new Vector3(0f, 0f, verInput) * speed;
-        rig.velocity = hor + ver;
+
+        if (horInput > 0)
+        {
+            if (checker.CastRightRays()) horInput = 0;
+        }
+        else
+        {
+            if (checker.CastLeftRays()) horInput = 0;
+        }
+        if (verInput > 0)
+        {
+            if (checker.CastForwardRays()) verInput = 0;
+        }
+        else
+        {
+            if (checker.CastBackwardRays()) verInput = 0;
+        }
+
+        rig.velocity = new Vector3(horInput, 0f, verInput) * speed;
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     Rigidbody _rig;
+    RaycastCubesChecker checker;
 
     public bool isVert, isHor;
     [SerializeField] bool invertMovement = false;
@@ -16,25 +17,34 @@ public class Player : MonoBehaviour
     void Start()
     {
         _rig = GetComponent<Rigidbody>();
+        checker = GetComponent<RaycastCubesChecker>();
     }
 
 
     void FixedUpdate()
     {
         invertK = invertMovement ? -1 : 1;
-        Vector3 horDirection =
-            new Vector3(isHor ? -speed.x * Controll.Horizontal * invertK : 0f, 0f, 0f);
-        Vector3 vertDirection =
-            new Vector3(0f, 0f, isVert ? -speed.z * Controll.Vertical * invertK : 0f);
+        float hor = isHor ? -speed.x * Controll.Horizontal * invertK : 0f;
+        float ver = isVert ? -speed.z * Controll.Vertical * invertK : 0f;
+        if (hor > 0)
+        {
+            if (checker.CastRightRays()) hor = 0;
+        }
+        else
+        {
+            if (checker.CastLeftRays()) hor = 0;
+        }
+        if (ver > 0)
+        {
+            if (checker.CastForwardRays()) ver = 0;
+        }
+        else
+        {
+            if (checker.CastBackwardRays()) ver = 0;
+        }
 
-        bool enanbleHor = !Physics.Raycast(transform.position, horDirection, transform.localScale.x / 2);
-        bool enanbleVert = !Physics.Raycast(transform.position, vertDirection, transform.localScale.z / 2);
 
-        //for disable
-        enanbleHor = true;
-        enanbleVert = true;
-        _rig.velocity += enanbleHor ? horDirection : Vector3.zero;
-        _rig.velocity += enanbleVert ? vertDirection : Vector3.zero;
+        _rig.velocity += new Vector3(hor, 0f, ver);
     }
 
     private void OnTriggerEnter(Collider other)

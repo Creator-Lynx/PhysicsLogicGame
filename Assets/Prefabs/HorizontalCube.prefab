@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1690558552085214566}
   - component: {fileID: 1690558552085214561}
   - component: {fileID: 432533681177368624}
+  - component: {fileID: 5803975090420111739}
   m_Layer: 0
   m_Name: HorizontalCube
   m_TagString: Untagged
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isVert: 0
   isHor: 1
+  invertMovement: 0
   speed: {x: 0.4, y: 0, z: 0.4}
 --- !u!114 &432533681177368624
 MonoBehaviour:
@@ -142,3 +144,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowsPrefab: {fileID: 5529423863493438646, guid: e3432115235d2964780f0192745aa64d, type: 3}
+--- !u!114 &5803975090420111739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690558552085214560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e29cd5df73d0f429076d8cc131e343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 0.49
