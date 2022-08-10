@@ -20,6 +20,15 @@ public class RGameManager : MonoBehaviour
     [SerializeField] int levelsCount;
     static bool isFirstStart = true;
 
+
+    //for custom ad
+    static int currentFinishedLevels = 0;
+    static int currentRestartedLevels = 0;
+    static float lastAdCallTime = 0;
+
+    [SerializeField]
+    int restartsToAd = 12;
+    public static int levelsToAd = 7;
     private void Start()
     {
 
@@ -66,6 +75,18 @@ public class RGameManager : MonoBehaviour
         {
             OnLevelEnd();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //ad
+            currentRestartedLevels++;
+            if (currentRestartedLevels > restartsToAd)
+            {
+                if (Time.time > lastAdCallTime + (5 * 60))
+                {
+                    currentRestartedLevels = 0;
+                    YandexSDK.instance.ShowInterstitial();
+                    lastAdCallTime = Time.time;
+                }
+
+            }
         }
         else
         {
@@ -88,10 +109,22 @@ public class RGameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt("Completed_Levels", 0))
         {
             PlayerPrefs.SetInt("Completed_Levels", PlayerPrefs.GetInt("Completed_Levels", 0) + 1);
+
             //analitics
             OnLevelComplete();
         }
 
+        currentFinishedLevels++;
+        if (currentFinishedLevels > levelsToAd)
+        {
+            if (Time.time > lastAdCallTime + (5 * 60))
+            {
+                currentFinishedLevels = 0;
+                YandexSDK.instance.ShowInterstitial();
+                lastAdCallTime = Time.time;
+            }
+
+        }
     }
 
 
@@ -267,7 +300,48 @@ public class RGameManager : MonoBehaviour
     }
 
 
+    void CheckLocalization()
+    {
+        var culture = System.Globalization.CultureInfo.CurrentCulture;
+        if (culture.ToString() == "ru-RU") SetRuLocalization();
+        else SetEnLocalization();
 
+    }
+    [SerializeField]
+    Text[] texts;
+    string[] ru =
+    {
+        "abf",
+        "df"
+    };
+    string[] en =
+    {
+        "abf",
+        "df"
+    };
+    void SetRuLocalization()
+    {
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].text = ru[i];
+        }
+    }
+    void SetEnLocalization()
+    {
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].text = en[i];
+        }
+    }
 
+    void OnApplicationFocus(bool hasFocus)
+    {
+        GetComponent<AudioListener>().enabled = hasFocus;
+    }
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+        GetComponent<AudioListener>().enabled = pauseStatus;
+    }
 
 }
