@@ -99,9 +99,16 @@ public class RGameManager : MonoBehaviour
 
     }
 
+    [SerializeField]
+    Image muteButton;
+    [SerializeField]
+    Sprite soundOn, soundOff;
+    bool isMuted = false;
     public void MuteAudio()
     {
-        GetComponent<AudioSource>().mute = !GetComponent<AudioSource>().mute;
+        isMuted = !isMuted;
+        GetComponent<AudioListener>().enabled = !GetComponent<AudioListener>().enabled;
+        muteButton.sprite = muteButton.sprite == soundOff ? soundOn : soundOff;
     }
 
     //отметка пройденных уровней
@@ -165,7 +172,8 @@ public class RGameManager : MonoBehaviour
 
     public static void PlayCompleteAudio()
     {
-        This.LevelCompleteAudio.Play();
+
+        This.LevelCompleteAudio.GetComponent<AudioYB>().Play("big thunder drum");
     }
     public void ShowMessageOnFailedSendAnalytics()
     {
@@ -303,11 +311,14 @@ public class RGameManager : MonoBehaviour
 
     void CheckLocalization()
     {
-        var culture = System.Globalization.CultureInfo.CurrentCulture;
-        Debug.Log(culture);
-        if (culture.ToString() == "ru-RU") SetRuLocalization();
-        else SetEnLocalization();
-
+        if (Application.systemLanguage == SystemLanguage.Russian)
+        {
+            SetRuLocalization();
+        }
+        else
+        {
+            SetEnLocalization();
+        }
     }
     [SerializeField]
     Text[] texts;
@@ -319,14 +330,14 @@ public class RGameManager : MonoBehaviour
     string[] en =
     {
     };
-    void SetRuLocalization()
+    public void SetRuLocalization()
     {
         for (int i = 0; i < texts.Length; i++)
         {
             texts[i].text = ru[i];
         }
     }
-    void SetEnLocalization()
+    public void SetEnLocalization()
     {
         for (int i = 0; i < texts.Length; i++)
         {
@@ -336,12 +347,18 @@ public class RGameManager : MonoBehaviour
 
     void OnApplicationFocus(bool hasFocus)
     {
-        GetComponent<AudioListener>().enabled = hasFocus;
+        if (!isMuted)
+            GetComponent<AudioListener>().enabled = hasFocus;
     }
 
     void OnApplicationPause(bool pauseStatus)
     {
         GetComponent<AudioListener>().enabled = pauseStatus;
+    }
+
+    public void SetQuality(int lvl)
+    {
+        QualitySettings.SetQualityLevel(lvl);
     }
 
 }

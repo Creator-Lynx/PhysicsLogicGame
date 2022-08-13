@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 77842349}
   - component: {fileID: 77842350}
+  - component: {fileID: 77842351}
   m_Layer: 0
   m_Name: TextAudio
   m_TagString: Untagged
@@ -164,7 +165,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 92e9a6ea8a140fd45927308938bd16c7, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1.25
@@ -250,6 +251,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &77842351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77842348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0cb7596fae5eb74b8c0b6d5054dfae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &372152557
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,8 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b094871435fc046a15a19fd36076e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introAudio: {fileID: 1703724253}
-  textAudio: {fileID: 77842350}
+  introAudio: {fileID: 1703724252}
+  textAudio: {fileID: 77842351}
 --- !u!1 &1703724248
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,8 +484,9 @@ GameObject:
   - component: {fileID: 1703724251}
   - component: {fileID: 1703724250}
   - component: {fileID: 1703724249}
-  - component: {fileID: 1703724252}
   - component: {fileID: 1703724253}
+  - component: {fileID: 1703724252}
+  - component: {fileID: 1703724254}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -554,30 +568,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1703724248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Script: {fileID: 11500000, guid: a0cb7596fae5eb74b8c0b6d5054dfae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!82 &1703724253
 AudioSource:
   m_ObjectHideFlags: 0
@@ -588,7 +581,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 418608d981ec16d46a750fe0250ea36c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -674,6 +667,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1703724254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703724248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9254ac4ab686704b96516d280ab9972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cash: 0
+  DinamicCash: 0
+  infoList:
+  - Name: boat of pleasure
+    Path: F:/UnityProjects/PhysicsLogicGame/Assets/StreamingAssets
+    Ext: mp3
+    Type: 13
+    Cashing: 0
+    Cash: {fileID: 0}
+  - Name: Intro
+    Path: F:/UnityProjects/PhysicsLogicGame/Assets/StreamingAssets
+    Ext: mp3
+    Type: 13
+    Cashing: 0
+    Cash: {fileID: 0}
+  - Name: mint dragon
+    Path: F:/UnityProjects/PhysicsLogicGame/Assets/StreamingAssets
+    Ext: mp3
+    Type: 13
+    Cashing: 0
+    Cash: {fileID: 0}
+  - Name: up to the hell
+    Path: F:/UnityProjects/PhysicsLogicGame/Assets/StreamingAssets
+    Ext: mp3
+    Type: 13
+    Cashing: 0
+    Cash: {fileID: 0}
+  - Name: big thunder drum
+    Path: F:/UnityProjects/PhysicsLogicGame/Assets/StreamingAssets
+    Ext: wav
+    Type: 20
+    Cashing: 0
+    Cash: {fileID: 0}
 --- !u!1 &1956030235
 GameObject:
   m_ObjectHideFlags: 0

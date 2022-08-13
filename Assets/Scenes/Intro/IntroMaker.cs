@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class IntroMaker : MonoBehaviour
 {
     [SerializeField]
-    AudioSource introAudio, textAudio;
+    AudioYB introAudio, textAudio;
     AsyncOperation sceneLoading;
     private void Start()
     {
@@ -32,10 +32,10 @@ public class IntroMaker : MonoBehaviour
 
     public void PlayTextSound()
     {
-        textAudio.Play();
+        textAudio.Play("big thunder drum");
     }
     public void PlayIntroSound()
     {
-        introAudio.Play();
+        introAudio.Play("Intro");
     }
 }

@@ -5,10 +5,14 @@ using UnityEngine;
 public class ThemeChanger : MonoBehaviour
 {
     AudioSource _audioSource;
+    AudioYB _audioYB;
     Animator _animator;
     [SerializeField] string[] triggerNames;
-    [SerializeField] AudioClip[] music;
+    [SerializeField] string[] music;
+    [SerializeField] float[] musicLength;
 
+    [SerializeField]
+    bool useSideMusicPlayer = true;
     enum State
     {
         legacy,
@@ -24,6 +28,7 @@ public class ThemeChanger : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         _animator = GetComponent<Animator>();
+        _audioYB = GetComponent<AudioYB>();
         changingThemes = PlayerPrefs.GetInt("ChangeTheme", 1) == 1;
         StartCoroutine(MusicEndCheck());
     }
@@ -36,7 +41,7 @@ public class ThemeChanger : MonoBehaviour
         {
             prevState = state;
             state = State.legacy;
-            _audioSource.Stop();
+            StopMusic();
         }
         else
         if (prevState != State.legacy)
@@ -58,8 +63,8 @@ public class ThemeChanger : MonoBehaviour
         _animator.SetTrigger(triggerNames[(int)state]);
         if (state != State.legacy)
         {
-            _audioSource.clip = music[(int)state - 1];
-            _audioSource.Play();
+            PlayMusic(music[(int)state - 1]);
+
         }
 
 
@@ -70,24 +75,20 @@ public class ThemeChanger : MonoBehaviour
     {
         if (changingThemes)
         {
-            if (!_audioSource.isPlaying)
+            if (state == State.legacy)
             {
-                if (state == State.legacy)
-                {
-                    yield return new WaitForSeconds(30f);
-                    SetTheme();
-                }
-                else
-                {
-                    yield return new WaitForSeconds(10f);
-                    SetTheme(true);
-                }
 
+                yield return new WaitForSeconds(30f);
+                SetTheme();
+                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(musicLength[(int)state - 1]);
             }
             else
             {
-                yield return new WaitForSeconds(5f);
+                SetTheme(true);
             }
+
+
             StartCoroutine(MusicEndCheck());
         }
 
@@ -109,5 +110,41 @@ public class ThemeChanger : MonoBehaviour
             PlayerPrefs.SetInt("ChangeTheme", 1);
             StartCoroutine(MusicEndCheck());
         }
+    }
+
+    void PlayMusic(string clip)
+    {
+        if (useSideMusicPlayer)
+        {
+            _audioYB.Play(clip);
+        }
+        else
+        {
+            //_audioSource.clip = .;
+            _audioSource.Play();
+        }
+    }
+    void StopMusic()
+    {
+        if (useSideMusicPlayer)
+        {
+            _audioYB.Pause();
+        }
+        else
+        {
+            _audioSource.Stop();
+        }
+    }
+    bool CheckMusicIsPlaying()
+    {
+        if (useSideMusicPlayer)
+        {
+            return false;
+        }
+        else
+        {
+            return _audioSource.isPlaying;
+        }
+
     }
 }
