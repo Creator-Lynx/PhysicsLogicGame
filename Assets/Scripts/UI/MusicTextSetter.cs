@@ -8,7 +8,18 @@ public class MusicTextSetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Text>().text = "Music:  mint dragon;\nup to the hell;\nboat of pleasure;\nby Der Steppenfichs";
+        var culture = System.Globalization.CultureInfo.CurrentCulture;
+        if (culture.ToString() == "ru-RU")
+        {
+            GetComponent<Text>().text =
+            "Музыка:  mint dragon;\nup to the hell;\nboat of pleasure;\n от Der Steppenfuchs";
+        }
+        else
+        {
+            GetComponent<Text>().text =
+            "Music:  mint dragon;\nup to the hell;\nboat of pleasure;\nby Der Steppenfuchs";
+        }
+
     }
 
 

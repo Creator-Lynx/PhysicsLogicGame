@@ -291,16 +291,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140678274117432306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000046647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6554681602560548812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12974945, y: 0.65449315}
-  m_AnchorMax: {x: 0.5246253, y: 0.8013809}
-  m_AnchoredPosition: {x: 1, y: 1.5}
-  m_SizeDelta: {x: -3.784912, y: -1.459671}
+  m_AnchorMin: {x: 0.12974945, y: 0.65843415}
+  m_AnchorMax: {x: 0.87640315, y: 0.8013809}
+  m_AnchoredPosition: {x: 0.6000061, y: -1.7300034}
+  m_SizeDelta: {x: -1.3800049, y: 0.53999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5813515206292133187
 CanvasRenderer:
@@ -809,7 +809,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8710019280296534960}
-  - component: {fileID: 3925169120664868171}
   - component: {fileID: 3709118487349041771}
   m_Layer: 0
   m_Name: Post-process Volume Legacy
@@ -832,23 +831,6 @@ Transform:
   m_Father: {fileID: 4853110439345720843}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3925169120664868171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2624121011746556755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
 --- !u!114 &3709118487349041771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4490100454191305521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1709,7 +1691,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2365972730449503489}
-  - component: {fileID: 6116898119564825585}
   - component: {fileID: 8088579859132818702}
   m_Layer: 0
   m_Name: Post-process Volume Hell
@@ -1732,23 +1713,6 @@ Transform:
   m_Father: {fileID: 4853110439345720843}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6116898119564825585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4743694130484749718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 0
-  sharedProfile: {fileID: 11400000, guid: ee752c81dccca1f4e80f848015eceaa2, type: 2}
 --- !u!114 &8088579859132818702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,7 +1873,6 @@ GameObject:
   - component: {fileID: 4853110439345720843}
   - component: {fileID: 4853110439345720842}
   - component: {fileID: 4853110439345720841}
-  - component: {fileID: 4853110439345720840}
   - component: {fileID: 4853110439345720836}
   - component: {fileID: 4853110439345720846}
   - component: {fileID: 4433478739985210355}
@@ -2003,38 +1966,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!114 &4853110439345720840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4853110439345720839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 1
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!81 &4853110439345720836
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2063,12 +1994,32 @@ MonoBehaviour:
   ExitButton: {fileID: 8909525765691555836}
   LevelCompleteAudio: {fileID: 3076618170284635999}
   levelsCount: 42
+  restartsToAd: 12
   settingsElements:
   - {fileID: 8834622702969386727}
   - {fileID: 2876464566196388626}
   - {fileID: 5887006270167158017}
   - {fileID: 8776274920702325767}
   - {fileID: 1329112967515079522}
+  texts:
+  - {fileID: 2102496586137960626}
+  - {fileID: 7722125322131494542}
+  - {fileID: 4227449110146611360}
+  - {fileID: 2981118811768614830}
+  ru:
+  - "\u0421\u043E\u0437\u0434\u0430\u0442\u0435\u043B\u0438"
+  - "\u0421\u043E\u0437\u0434\u0430\u043D\u043E \u0432 \u0440\u0430\u043C\u043A\u0430\u0445
+    Game Train project"
+  - "\u0422\u0438\u043F \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    (\u0434\u043B\u044F \u043A\u0430\u0441\u0430\u043D\u0438\u0439)"
+  - "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u044C/\u0432\u044B\u043A\u043B\u044E\u0447\u0438\u0442\u044C
+    \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0435 \u0446\u0432\u0435\u0442\u043E\u0432\u044B\u0445
+    \u0438 \u043C\u0443\u0437\u044B\u043A\u0430\u043B\u044C\u043D\u044B\u0445 \u0442\u0435\u043C"
+  en:
+  - Creators
+  - "\u0421reated as part of the Game Train project"
+  - Controll type
+  - Enable theme change
 --- !u!82 &4433478739985210355
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2870,7 +2821,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1276725665051971749}
-  - component: {fileID: 3621405424325012824}
   - component: {fileID: 4422775250108717329}
   m_Layer: 0
   m_Name: Post-process Volume Mint
@@ -2893,23 +2843,6 @@ Transform:
   m_Father: {fileID: 4853110439345720843}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3621405424325012824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7287194076201122290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 0
-  sharedProfile: {fileID: 11400000, guid: 55e3abf78244f434c869071092fea2c0, type: 2}
 --- !u!114 &4422775250108717329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2925,7 +2858,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: 9041d1003cae9d04889a2c5def20e7b3, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 1
+  weight: 0
   priority: 0
 --- !u!1 &7423060853824359251
 GameObject:
@@ -3254,7 +3187,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creators
+  m_Text: "\u0421\u0443\u043A\u0438, \u0441\u0434\u0435\u043B\u0430\u0432\u0448\u0438\u0435
+    \u042D\u0422\u041E"
 --- !u!1 &8006460878022476383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,7 +3648,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3857263626607383712}
-  - component: {fileID: 87266172448007215}
   - component: {fileID: 6590011589847584143}
   m_Layer: 0
   m_Name: Post-process Volume Pleasure
@@ -3737,23 +3670,6 @@ Transform:
   m_Father: {fileID: 4853110439345720843}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &87266172448007215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8737702136177922431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 0
-  sharedProfile: {fileID: 11400000, guid: ebabcfda5824deb45b11f6f09ac7ec49, type: 2}
 --- !u!114 &6590011589847584143
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -42,6 +42,7 @@ public class RGameManager : MonoBehaviour
         else
         {
             This = GetComponent<RGameManager>();
+            CheckLocalization();
             DontDestroyOnLoad(this.gameObject);
         }
 
@@ -303,21 +304,20 @@ public class RGameManager : MonoBehaviour
     void CheckLocalization()
     {
         var culture = System.Globalization.CultureInfo.CurrentCulture;
+        Debug.Log(culture);
         if (culture.ToString() == "ru-RU") SetRuLocalization();
         else SetEnLocalization();
 
     }
     [SerializeField]
     Text[] texts;
+    [SerializeField]
     string[] ru =
     {
-        "abf",
-        "df"
     };
+    [SerializeField]
     string[] en =
     {
-        "abf",
-        "df"
     };
     void SetRuLocalization()
     {

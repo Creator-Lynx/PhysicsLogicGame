@@ -40,12 +40,12 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnBeginDrag(PointerEventData eventData)
     {
 
-
+        canUseInputAxis = false;
 
     }
     public void OnDrag(PointerEventData eventData)
     {
-
+        canUseInputAxis = false;
         Vector2 moving = new Vector2();
         //cs = cos(a);
         //sn = sin(a);    
@@ -92,6 +92,7 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         ChoosedDirection = false;
         horizontalMultiplier = 1;
         verticalMultiplier = 1;
+        canUseInputAxis = true;
 
     }
 
@@ -100,6 +101,16 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         Horizontal = 0;
         Vertical = 0;
+        canUseInputAxis = true;
     }
 
+    bool canUseInputAxis = true;
+    public void Update()
+    {
+        if (canUseInputAxis)
+        {
+            Horizontal = Input.GetAxis("Horizontal") * clamp;
+            Vertical = Input.GetAxis("Vertical") * clamp;
+        }
+    }
 }
