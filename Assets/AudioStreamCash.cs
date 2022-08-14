@@ -47,7 +47,7 @@ public class AudioStreamCash : MonoBehaviour
     void LoadCash()
     {
         foreach (var item in infoList)
-           item.GetFile();
+            item.GetFile();
     }
 
     public static Clip Find(string name)
@@ -72,7 +72,7 @@ public class Clip
 
     public Clip(string path, string name, string ext, AudioType type, bool cash)
     {
-        Ext =  ext;
+        Ext = ext;
         Name = name.Substring(0, name.Length - Ext.Length - 1);
         Path = path;
         Type = type;
@@ -104,6 +104,6 @@ public class Clip
         }
     }
 
-   
+
     public void ClearCash() => Cash = null;
 }

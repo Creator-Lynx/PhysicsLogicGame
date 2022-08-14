@@ -185,6 +185,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -280,6 +281,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -379,6 +381,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
+--- !u!83 &316601561
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: up to the hell
+  m_LoadType: 0
+  m_Channels: 0
+  m_Frequency: 0
+  m_BitsPerSample: 0
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1001 &373676168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -739,6 +769,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -831,6 +862,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -904,8 +936,124 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[0].Ext
+      value: ogg
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[1].Ext
+      value: ogg
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[2].Ext
+      value: ogg
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[3].Ext
+      value: ogg
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[4].Ext
+      value: ogg
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[0].Cash
+      value: 
+      objectReference: {fileID: 1656006087}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[0].Name
+      value: big thunder drum
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[0].Path
+      value: F:/UnityProjects/PhysicsLogicGame/Assets/StreamingAssets
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[0].Type
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[1].Cash
+      value: 
+      objectReference: {fileID: 1831812848}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[1].Name
+      value: boat of pleasure
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[1].Type
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[2].Cash
+      value: 
+      objectReference: {fileID: 1273928711}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[2].Name
+      value: Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[2].Type
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[3].Cash
+      value: 
+      objectReference: {fileID: 1615575702}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[3].Name
+      value: mint dragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[3].Type
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[4].Cash
+      value: 
+      objectReference: {fileID: 316601561}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[4].Name
+      value: up to the hell
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[4].Type
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[0].Cashing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[1].Cashing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[2].Cashing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[3].Cashing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: infoList.Array.data[4].Cashing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2127252049438448701, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4147705322548547750, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552455268663491133, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4853110439345720839, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
@@ -959,6 +1107,10 @@ PrefabInstance:
     - target: {fileID: 4874553361456335256, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.100097656
+      objectReference: {fileID: 0}
+    - target: {fileID: 8162815270327806424, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8596928882202844657, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1093,6 +1245,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1197,6 +1350,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1690558552085214570, guid: a31cd56bbb0f75449b2b0736d723e1e8, type: 3}
   m_PrefabInstance: {fileID: 1211704724}
   m_PrefabAsset: {fileID: 0}
+--- !u!83 &1273928711
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Intro
+  m_LoadType: 0
+  m_Channels: 0
+  m_Frequency: 0
+  m_BitsPerSample: 0
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1001 &1296497205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1315,6 +1496,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1358,6 +1540,62 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1736130107165824745, guid: 505ebc1b01fda7d4489e1e3dfba73fd4, type: 3}
   m_PrefabInstance: {fileID: 651473161}
   m_PrefabAsset: {fileID: 0}
+--- !u!83 &1615575702
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: mint dragon
+  m_LoadType: 0
+  m_Channels: 0
+  m_Frequency: 0
+  m_BitsPerSample: 0
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
+--- !u!83 &1656006087
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: big thunder drum
+  m_LoadType: 0
+  m_Channels: 0
+  m_Frequency: 0
+  m_BitsPerSample: 0
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1001 &1745175194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1419,6 +1657,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 505ebc1b01fda7d4489e1e3dfba73fd4, type: 3}
+--- !u!83 &1831812848
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: boat of pleasure
+  m_LoadType: 0
+  m_Channels: 0
+  m_Frequency: 0
+  m_BitsPerSample: 0
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1001 &1849584932
 PrefabInstance:
   m_ObjectHideFlags: 0

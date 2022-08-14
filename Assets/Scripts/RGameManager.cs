@@ -103,11 +103,15 @@ public class RGameManager : MonoBehaviour
     Image muteButton;
     [SerializeField]
     Sprite soundOn, soundOff;
+    [SerializeField]
+    UnityEngine.Audio.AudioMixerGroup masterMixer, mutedMixer;
+
     bool isMuted = false;
     public void MuteAudio()
     {
         isMuted = !isMuted;
-        GetComponent<AudioListener>().enabled = !GetComponent<AudioListener>().enabled;
+        GetComponent<AudioSource>().mute = isMuted;
+        LevelCompleteAudio.mute = isMuted;
         muteButton.sprite = muteButton.sprite == soundOff ? soundOn : soundOff;
     }
 
@@ -345,16 +349,14 @@ public class RGameManager : MonoBehaviour
         }
     }
 
+
     void OnApplicationFocus(bool hasFocus)
     {
-        if (!isMuted)
-            GetComponent<AudioListener>().enabled = hasFocus;
+        GetComponent<AudioSource>().mute = !hasFocus || isMuted;
+        LevelCompleteAudio.mute = !hasFocus || isMuted;
+        Debug.Log("focus" + hasFocus);
     }
 
-    void OnApplicationPause(bool pauseStatus)
-    {
-        GetComponent<AudioListener>().enabled = pauseStatus;
-    }
 
     public void SetQuality(int lvl)
     {

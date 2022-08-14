@@ -32,10 +32,10 @@ public class IntroMaker : MonoBehaviour
 
     public void PlayTextSound()
     {
-        textAudio.Play("big thunder drum");
+        textAudio.PlayOnShot("big thunder drum");
     }
     public void PlayIntroSound()
     {
-        introAudio.Play("Intro");
+        introAudio.PlayOnShot("Intro");
     }
 }

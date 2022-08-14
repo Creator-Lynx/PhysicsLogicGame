@@ -398,14 +398,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
-      propertyPath: Cash
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 733864103281875684, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
-      propertyPath: DinamicCash
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1599868405156460357, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.7575073
