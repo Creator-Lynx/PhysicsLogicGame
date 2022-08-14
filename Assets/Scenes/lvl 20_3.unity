@@ -1432,6 +1432,10 @@ PrefabInstance:
       propertyPath: weight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7445612087423804618, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
+      propertyPath: antialiasingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8088579859132818702, guid: 7aa0a23404f97a84ea9742ca724a4b01, type: 3}
       propertyPath: weight
       value: 0

@@ -11,7 +11,7 @@ public class IntroMaker : MonoBehaviour
     private void Start()
     {
 #if UNITY_EDITOR
-        //PlayerPrefs.SetInt("IsFirstStart", 1);
+        PlayerPrefs.SetInt("IsFirstStart", 1);
 #endif
 
         if (PlayerPrefs.GetInt("IsFirstStart", 1) == 1)

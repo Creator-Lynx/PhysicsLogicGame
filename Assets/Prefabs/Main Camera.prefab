@@ -1234,7 +1234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8710019280296534960}
   - component: {fileID: 3709118487349041771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Post-process Volume Legacy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2115,7 +2115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4490100454191305521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2335,7 +2335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2365972730449503489}
   - component: {fileID: 8088579859132818702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Post-process Volume Hell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,9 +2588,9 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2859,10 +2859,10 @@ MonoBehaviour:
   volumeTrigger: {fileID: 4853110439345720843}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 2147483647
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
+    m_Bits: 64
+  stopNaNPropagation: 0
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 0
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -3924,7 +3924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276725665051971749}
   - component: {fileID: 4422775250108717329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Post-process Volume Mint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4897,7 +4897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3857263626607383712}
   - component: {fileID: 6590011589847584143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Post-process Volume Pleasure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
