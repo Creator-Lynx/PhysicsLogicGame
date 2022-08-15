@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class RGameManager : MonoBehaviour
 {
     [SerializeField] GameObject LevelScreen, SettingsScreen, AnalyticsMessage;
@@ -33,7 +34,7 @@ public class RGameManager : MonoBehaviour
     {
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("MainCamera");
-
+        Application.targetFrameRate = 30;
 
         if (objs.Length > 1)
         {
@@ -349,18 +350,23 @@ public class RGameManager : MonoBehaviour
         }
     }
 
-
+    /*
     void OnApplicationFocus(bool hasFocus)
     {
         GetComponent<AudioSource>().mute = !hasFocus || isMuted;
         LevelCompleteAudio.mute = !hasFocus || isMuted;
         Debug.Log("focus" + hasFocus);
-    }
+    }*/
 
 
     public void SetQuality(int lvl)
     {
         QualitySettings.SetQualityLevel(lvl);
+    }
+
+    public void SetPostProcessingEnabled(bool enabled)
+    {
+        GetComponent<UnityEngine.Rendering.PostProcessing.PostProcessLayer>().enabled = enabled;
     }
 
 }
