@@ -262,6 +262,7 @@ public class RGameManager : MonoBehaviour
             ShowHideLevelsScreen(false);
 
             ExitButton.SetActive(true);
+            foreach (GameObject el in settingsElements) el.SetActive(true);
             SettingsScreenAnim.Play("SettingsOpen");
         }
         else if (SettingsScreen.activeSelf)

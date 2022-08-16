@@ -103,6 +103,7 @@ public class ThemeChanger : MonoBehaviour
             changingThemes = false;
             PlayerPrefs.SetInt("ChangeTheme", 0);
             SetTheme(true);
+            StopAllCoroutines();
         }
         else
         {
