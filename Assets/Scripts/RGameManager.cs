@@ -30,11 +30,14 @@ public class RGameManager : MonoBehaviour
     [SerializeField]
     int restartsToAd = 12;
     public static int levelsToAd = 7;
+    [SerializeField]
+    bool targetingFrameRate = false;
     private void Start()
     {
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("MainCamera");
-        Application.targetFrameRate = 30;
+        if (targetingFrameRate) Application.targetFrameRate = 30;
+        else Application.targetFrameRate = -1;
 
         if (objs.Length > 1)
         {
@@ -310,7 +313,6 @@ public class RGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B)) PlayerPrefs.SetInt("Completed_Levels", 0);
     }
 
 
