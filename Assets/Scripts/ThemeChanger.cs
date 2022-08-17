@@ -30,7 +30,8 @@ public class ThemeChanger : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioYB = GetComponent<AudioYB>();
         changingThemes = PlayerPrefs.GetInt("ChangeTheme", 1) == 1;
-        StartCoroutine(MusicEndCheck());
+        if (changingThemes)
+            StartCoroutine(MusicEndCheck());
     }
 
 
@@ -39,58 +40,33 @@ public class ThemeChanger : MonoBehaviour
     {
         if (wantToSetPause)
         {
-            prevState = state;
             state = State.legacy;
             StopMusic();
-        }
-        else
-        if (prevState != State.legacy)
-        {
-            int r;
-            do
-            {
-                r = UnityEngine.Random.Range(1, 4);
-            }
-            while (prevState == (State)r);
-            state = (State)r;
-
         }
         else
         {
             state = (State)UnityEngine.Random.Range(1, 4);
         }
-
+        for (int i = 0; i < triggerNames.Length; i++)
+        {
+            _animator.ResetTrigger(triggerNames[i]);
+        }
         _animator.SetTrigger(triggerNames[(int)state]);
         if (state != State.legacy)
         {
             PlayMusic(music[(int)state - 1]);
-
         }
-
-
-
     }
 
     IEnumerator MusicEndCheck()
     {
+        yield return new WaitForSeconds(30f);
+        SetTheme();
+        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(musicLength[(int)state - 1]);
+
         if (changingThemes)
-        {
-            if (state == State.legacy)
-            {
-
-                yield return new WaitForSeconds(30f);
-                SetTheme();
-                yield return new WaitForSeconds(0.5f);
-                yield return new WaitForSeconds(musicLength[(int)state - 1]);
-            }
-            else
-            {
-                SetTheme(true);
-            }
-
-
             StartCoroutine(MusicEndCheck());
-        }
 
     }
 
@@ -107,6 +83,7 @@ public class ThemeChanger : MonoBehaviour
         }
         else
         {
+            StopAllCoroutines();
             changingThemes = true;
             PlayerPrefs.SetInt("ChangeTheme", 1);
             StartCoroutine(MusicEndCheck());
