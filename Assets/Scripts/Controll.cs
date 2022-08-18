@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Controll : MonoCache, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public static float Horizontal;
     public static float Vertical;
@@ -96,7 +96,7 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     }
 
-    // Start is called before the first frame update
+
     void Start()
     {
         Horizontal = 0;
@@ -105,7 +105,7 @@ public class Controll : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     }
 
     bool canUseInputAxis = true;
-    public void Update()
+    public override void OnTick()
     {
         if (canUseInputAxis)
         {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaycastCubesChecker : MonoBehaviour
+public class RaycastCubesChecker : MonoCache
 {
 
     void Start()
@@ -13,7 +13,7 @@ public class RaycastCubesChecker : MonoBehaviour
         //ShowVectors(); // testing
 
     }
-    void Update() //testing
+    public override void OnTick() //testing
     {
         DrawVectors();
     }

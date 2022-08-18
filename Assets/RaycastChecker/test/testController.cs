@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testController : MonoBehaviour
+public class testController : MonoCache
 {
     Rigidbody rig;
     float speed = 5f;
@@ -14,14 +14,14 @@ public class testController : MonoBehaviour
     }
     // use some input
     float horInput, verInput;
-    void Update()
+    public override void OnTick()
     {
         horInput = Input.GetAxis("Horizontal");
         verInput = Input.GetAxis("Vertical");
     }
 
     // test moving by input with raycast checker condition
-    void FixedUpdate()
+    public override void OnFixedTick()
     {
 
         if (horInput > 0)

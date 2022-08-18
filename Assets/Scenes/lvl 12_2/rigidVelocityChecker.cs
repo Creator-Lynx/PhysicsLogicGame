@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rigidVelocityChecker : MonoBehaviour
+public class rigidVelocityChecker : MonoCache
 {
     Rigidbody rig;
     [SerializeField]
@@ -16,7 +16,7 @@ public class rigidVelocityChecker : MonoBehaviour
 
     int counterToChange = 0;
     bool counting = true;
-    void FixedUpdate()
+    public override void OnFixedTick()
     {
         if (!counting) return;
         if (rig.velocity.magnitude > zeroMagnitude)

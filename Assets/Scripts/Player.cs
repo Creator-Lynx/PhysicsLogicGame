@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : MonoCache
 {
     Rigidbody _rig;
     RaycastCubesChecker checker;
@@ -13,16 +13,28 @@ public class Player : MonoBehaviour
     [SerializeField] bool invertMovement = false;
     int invertK = 1;
     [SerializeField] Vector3 speed;
+    [SerializeField]
+    float forceUpFactor = 20f, speedUpFactor = 20f;
+    float fixedFactor;
 
     void Start()
     {
         _rig = GetComponent<Rigidbody>();
         checker = GetComponent<RaycastCubesChecker>();
+        AddFixedUpdate();
+        fixedFactor = Time.fixedDeltaTime / 0.02f;
+    }
+    void OnDestroy()
+    {
+        RemoveFixedUpdate();
     }
 
 
-    void FixedUpdate()
+    public override void OnFixedTick()
     {
+#if UNITY_EDITOR
+        fixedFactor = Time.fixedDeltaTime / 0.02f;
+#endif
         invertK = invertMovement ? -1 : 1;
         float hor = isHor ? -speed.x * Controll.Horizontal * invertK : 0f;
         float ver = isVert ? -speed.z * Controll.Vertical * invertK : 0f;
@@ -43,8 +55,9 @@ public class Player : MonoBehaviour
             if (checker.CastBackwardRays()) ver = 0;
         }*/
 
-
-        _rig.velocity += new Vector3(hor, 0f, ver);
+        _rig.velocity += new Vector3(hor, 0f, ver) * fixedFactor;
+        //_rig.velocity = new Vector3(hor, 0f, ver) * fixedFactor * speedUpFactor;
+        //_rig.AddForce(new Vector3(hor, 0f, ver) * fixedFactor * forceUpFactor, ForceMode.Force);
     }
 
     private void OnTriggerEnter(Collider other)

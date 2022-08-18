@@ -311,10 +311,7 @@ public class RGameManager : MonoBehaviour
             Application.OpenURL("https://t.me/umqrahound");
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-    }
+
 
 
     void CheckLocalization()

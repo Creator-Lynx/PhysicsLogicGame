@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class MusicTextSetter : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+
         if (Application.systemLanguage == SystemLanguage.Russian)
         {
             GetComponent<Text>().text =
